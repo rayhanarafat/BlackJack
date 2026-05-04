@@ -72,6 +72,7 @@ function renderGame() {
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackJack = true
+        isAlive = false
         player.chips += 500
         updatePlayer()
     } else {
@@ -84,7 +85,7 @@ function renderGame() {
 
 
 function newCards() {
-    if (isAlive==true && hasBlackJack==false){
+    if (isAlive==true){
         let card = getRandomCard()
         cards.push(card)
         sum += card;
